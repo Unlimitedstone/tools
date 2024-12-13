@@ -3,6 +3,7 @@ import time
 from dataclasses import field
 from typing import List
 
+import pymysql
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -179,9 +180,5 @@ def start():
     print(f'插入数据库耗时{timer2.elapsed():.4f}s')
 
 if __name__ == "__main__":
-    start_time = time.time()
-    print('start_time:', start_time)
     start()
-    end_time = time.time()
-    print('end_time:', end_time)
-    print('done, took:', end_time - start_time)
+    print('done')
