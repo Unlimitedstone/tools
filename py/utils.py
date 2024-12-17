@@ -85,6 +85,10 @@ class MyTimer:
             raise ValueError("Timer has not been started or stopped.")
         return self.end_time - self.start_time
 
+
+def download_picture(picture_url, file_path, file_name):
+    pass
+
 # 示例使用
 def main():
 

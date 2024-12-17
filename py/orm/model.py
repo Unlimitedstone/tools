@@ -14,19 +14,27 @@ class BaseModel(Model):
 
 
 class MovieMessageModel(BaseModel):
-    id = BigAutoField(primary_key=True)
-    uni_id = CharField(unique=True)
-    image_url = CharField(null=True)
-    name = CharField()
-    score = CharField(null=True)
-    type = CharField()
+    actor = CharField(null=True)
+    alias = CharField(null=True)
     common = CharField(null=True)
-    source = CharField(null=True)
-    create_time = DateTimeField(constraints=[SQL("DEFAULT CURRENT_TIMESTAMP")])
-    update_time = DateTimeField(constraints=[SQL("DEFAULT CURRENT_TIMESTAMP")])
+    country = CharField(null=True)
+    director = CharField(null=True)
+    duration = IntegerField(null=True)
+    id = BigAutoField()
+    image_url = CharField(null=True)
+    imdb = CharField(null=True)
+    introduce = CharField(null=True)
+    name = CharField()
+    release_date = CharField(null=True)
+    score = CharField(null=True)
+    source = CharField()
+    type = CharField()
+    uni_id = CharField(unique=True)
+    writer = CharField(null=True)
 
     class Meta:
         table_name = 'movie_message'
+
 
 
 class MovieTagsModel(BaseModel):
@@ -34,8 +42,6 @@ class MovieTagsModel(BaseModel):
     movie_id = CharField(unique=True)
     source = IntegerField()
     tag = CharField(null=True)
-    create_time = DateTimeField(constraints=[SQL("DEFAULT CURRENT_TIMESTAMP")])
-    update_time = DateTimeField(constraints=[SQL("DEFAULT CURRENT_TIMESTAMP")])
 
     class Meta:
         table_name = 'movie_tags'
