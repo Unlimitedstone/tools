@@ -309,9 +309,11 @@ def start():
 
 
 if __name__ == "__main__":
-    # 清空数据库
-    MovieMessageModel.truncate_table()
-    MovieTagsModel.truncate_table()
+    # TODO 不获取重复数据
+    # MovieMessageModel.truncate_table()
+    # MovieTagsModel.truncate_table()
+
+    # TODO 电视剧，动漫获取
 
     start()
     print('done')
